@@ -1,0 +1,114 @@
+
+<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Blogging FAQs</h1>
+                    <span class="subheading">Want to learn how to start blogging?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% extends 'layout.html' %}
+{% block content %}
+{% autoescape false %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">
+    </head>
+    <body class="loggedin">
+    </body>
+    <body>
+        <div class="container">
+            <div class="col-md-12">
+                <div class="offer-dedicated-body-left">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade active show" id="p#" role="tabpanel" aria-labelledby="pills-reviews-tab">
+                            <div class="bg-white rounded p-4 mb-4 clearfix graph-star-rating" style="text-align:center;">
+                                <h5 class="mb-4"><span style="font-size: 35px">Search for an Article</span>
+                                    <form method="GET">
+                                      <input type="text" name="q"
+                                             placeholder="" autocomplete="off" />
+                                      <input type="submit" value="Search" style="margin-top: 15px"/>
+                                    </form>
+                                </h5>
+    <!--                        {% if not search_query %}-->
+    <!--                            <h5 class="mb-0 mb-4">Comments Thread </h5>-->
+    <!--                        {% else %}-->
+                                <br><br>
+                                <h5 class="mb-0 mb-4" style="text-align: left">Showing results for "{{ search_query }}": </h5>
+                                {% for comment in comments %}
+                                <div style="text-align: left">
+                                    <p>{{ comment }}</p>
+                                </div>
+                                {% endfor %}
+    <!--                        {% endif %}-->
+                            </div>
+                            <div class="bg-white rounded shadow p-4 mb-4 clearfix graph-star-rating">
+                                <h5 class="mb-0 mb-4">How do I start blogging?</h5>
+                                <p>If you’re looking for a quick guide on how to start a blog and make money online, here are the eight steps you should take! </p>
+                                <p>
+                                    Choose the niche for your blog. Go for something that you’re passionate about. Ideally, it should be a topic that will interest others as well.
+                                    Get web hosting and a domain name. Purchase hosting that best suits your budget and needs. Then, come up with a custom name for your domain, check its availability, and register it through a domain registrar.
+                                    Set up a platform for your blog. Choose a platform and set it up so you can start publishing content.
+                                    Create your blog with WordPress. We have chosen this platform as it is the most popular one.
+                                    Design and customize your blog. Change its design and functionality to your liking.
+                                    Publish content. Familiarize yourself with the available publishing tools and start planning, writing, and posting articles on your blog.
+                                    Promote and grow the following of your blog. Strategize and execute ways to promote your blog to increase its traffic and gain loyal readers.
+                                    Monetize your blog. Once you have sizable traffic and readership, implement methods like ads and affiliate marketing.
+                                </p>
+                                <p>In the upcoming sections, we’ll break down each step in the journey on how to make a blog for beginners and provide more details.</p>
+                                <p class="post-meta"> Posted by <a>Start Bootstrap</a> on August 24, 2022 </p>
+                            </div>
+
+                            <div class="bg-white rounded shadow p-4 mb-4 clearfix graph-star-rating">
+                                <h5 class="mb-0 mb-4">Why should you start blogging?</h5>
+                                <p>People start blogs for all sorts of reasons…</p>
+                                <p>To educate, to have a voice, to make money.
+                                    It’s important to understand your driving force.
+                                    The reason you start is the reason you will keep going.
+                                    The reason you will get up every morning at 4am while everyone else is happily sleeping,
+                                    to write your next inspired piece of content.
+                                    For me, it was about the power of the social web.
+                                    My blog was a publishing machine that gave me a voice to the masses, it gave my audience a voice,
+                                    it helped the little guy get noticed in a world of inflated egos and celebrity clickbait headlines.
+                                    Blogging helped me make some noise and leave a little dent on this universe.
+                                </p>
+                                <p>But it’s also more than that. Above all else, blogging is a platform for self development.</p>
+                                <p class="post-meta"> Posted by <a>Start Bootstrap</a> on August 24, 2022 </p>
+                            </div>
+
+                            <div class="bg-white rounded shadow p-4 mb-4 clearfix graph-star-rating">
+                                <h5 class="mb-0 mb-4">How do I be more confident when blogging?</h5>
+                                <p>
+                                    Fear is the great confidence killer. Blogging with love infuses confidence into your being.
+                                    Blog with love. Face fear-drivers. Stop blogging only to make money or to be popular.
+                                    Blog mainly to help people. Removing fear focused on an obsession with blogging outcomes does wonders for boosting your self-belief.
+                                    Make this shift to become a more confident blogger.
+                                </p>
+                                <p>
+                                    Blogging mainly for fun moves you out of the doubt-filled “OK, how am I doing?” energy so you can create from the clear, bold, “Wow this is fun!” energy.
+                                    Make fun not metrics your prime driver. Blogging for fun removes heavy, leaden, judgment-based ways of blogging, and leaves ’em in the rear view mirror.
+                                </p>
+                                <p>
+                                    Diving into blogging fears and life fears builds blogging confidence like few other practices.
+                                    Being more fearless – and willing to face fear – leaves doubts behind you as you evolve into a clear, confident blogger.
+                                    Get comfortable with being uncomfortable. Broadcast live. Write and self-publish your first eBook.
+                                    Do what you fear doing to increase blogging confidence.
+                                </p>
+                                <p class="post-meta"> Posted by <a>Start Bootstrap</a> on August 24, 2022 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endautoescape %}
+{% endblock %}

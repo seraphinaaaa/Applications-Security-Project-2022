@@ -1,0 +1,33 @@
+
+<link href="static/login.css" rel="stylesheet" />
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<div class="flip-container">
+<div class="flipper" id="flipper" style="height: 380px">
+	<div class="front">
+		<h1 class="title">Login</h1>
+		<form action="{{ url_for('login') }}" method="post">
+			<label for="username"><i class="fas fa-user"></i></label>
+			<input type="text" name="username" placeholder="Username" id="username" required>
+			<label for="password">
+				<i class="fas fa-lock"></i></label>
+			<input type="password" name="password" placeholder="Password" id="password" required>
+			<div class="g-recaptcha" data-sitekey="{{ sitekey }}"></div><br>
+			<div class="msg">{{ msg }}</div> <br>
+			<input type="submit" value="Login" required>
+		</form>
+		<a class="flipbutton" id="loginButton" href="{{ url_for('register') }}">Create my account →</a>
+	</div>
+
+	<div class="back">
+		<h1 class="title">Register</h1>
+		<form>
+				<input type="text" placeholder="Username" />
+				<input type="password" placeholder="Password" />
+				<input type="button" value="Sign up"/>
+		</form>
+		<a class="flipbutton" id="registerButton" href="{{ url_for('register') }}">Login to my account →</a>
+	</div>
+</div>
+</div>
+

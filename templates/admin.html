@@ -1,0 +1,79 @@
+
+<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Admin Page</h1>
+                    <span class="subheading">Admin Database</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<link rel="stylesheet" href="css/style.css">
+<script src="js2/jquery.min.js"></script>
+<script src="js2/popper.js"></script>
+<script src="js2/bootstrap.min.js"></script>
+<script src="js2/main.js"></script>
+
+{% extends 'layout.html' %}
+{% block title %} Admin {% endblock %}
+{% block content %}
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-wrap">
+                    <table class="table" >
+                        <thead class="thread-dark">
+                            <tr>
+                                <th>User ID</th>
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>Email</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in account %}
+                            <tr>
+                                {% if i['id'] == 2 %}
+                                    <td style="font-weight:bold">{{ i['id'] }}</td>
+                                {% else %}
+                                    <td>{{ i['id'] }}</td>
+                                {% endif %}
+                                {% if i['username'] == 'nypiscool' %}
+                                    <td style="font-weight:bold">
+                                        {{ i['username'] }}
+                                        <span class="badge bg-success rounded-pill d-inline" style="margin-left: 5px">
+                                            Admin
+                                        </span>
+                                    </td>
+                                {% else %}
+                                    <td>{{ i['username'] }}</td>
+                                {% endif %}
+                                <td>{{ i['password'] }}</td>
+                                <td>{{ i['email'] }}</td>
+                                <td>
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
+{% endblock %}
+

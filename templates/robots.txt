@@ -1,0 +1,4 @@
+User-agent: * <br>
+Disallow: * <br>
+Allow: / <br>
+Allow: /register <br>
